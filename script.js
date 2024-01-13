@@ -37,6 +37,24 @@ function update_chrono() {
 
 function start(){
   // Execute la fonction update_chrono() tout les 100ms
-  t =setInterval(update_chrono, 100);
+  t =setInterval(update_chrono,100);
   btn_start.disabled = true;
+}
+
+// Fonction du boutton stop
+function stop(){
+  clearInterval(t);
+  btn_start.disabled = false;
+}
+
+// Fonction du boutton reset
+function reset(){
+  clearInterval(t);
+  btn_start.disabled = false;
+  ms = 0, s = 0, mn = 0, h = 0
+  // Insérer nouvelle valeur
+  sp[0].innerHTML = h + ' h' ;
+  sp[1].innerHTML = mn + ' min' ;
+  sp[2].innerHTML = s + ' s' ;
+  sp[3].innerHTML = ms + ' ms' ;
 }
